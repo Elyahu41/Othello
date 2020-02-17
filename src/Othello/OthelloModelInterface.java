@@ -1,5 +1,5 @@
 package Othello;
-//Elyahu Jacobi
+// Elyahu Jacobi
 public interface OthelloModelInterface {
     boolean checkGameOver();
     boolean makeMove(int row, int col, CellState state);

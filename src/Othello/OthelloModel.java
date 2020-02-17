@@ -1,5 +1,5 @@
 package Othello;
-//Elyahu Jacobi
+// Elyahu Jacobi
 
 enum CellState {NONE, BLACK, WHITE}
 

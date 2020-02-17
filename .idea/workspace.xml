@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33d63e2c-b748-4fcf-819a-f55d1628b3f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Othello/OthelloWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/OthelloWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Othello/OthelloModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Othello/OthelloModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Othello/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Othello/OthelloModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/OthelloModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Othello/OthelloModelInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/OthelloModelInterface.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +34,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/Othello" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/Test/Othello" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Othello" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -152,6 +155,21 @@
       <option name="presentableId" value="Default" />
       <updated>1581538506677</updated>
     </task>
+    <task id="LOCAL-00001" summary="Any">
+      <created>1581963615118</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581963615118</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Any">
+      <created>1581963654599</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581963654600</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,5 +182,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Any" />
+    <option name="LAST_COMMIT_MESSAGE" value="Any" />
   </component>
 </project>
