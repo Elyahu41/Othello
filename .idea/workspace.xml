@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33d63e2c-b748-4fcf-819a-f55d1628b3f4" name="Default Changelist" comment="" />
+    <list default="true" id="33d63e2c-b748-4fcf-819a-f55d1628b3f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Othello/OthelloModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Othello/OthelloWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Othello/Othello/OthelloModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Othello/OthelloModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Othello/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Othello/OthelloModelInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/OthelloModelInterface.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -16,8 +27,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XiovX5aKXWgfNElXGSI3ReiZaJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -25,12 +43,12 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/Othello" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/Test/Othello" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Othello" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -62,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.OthelloModelTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="Othello.Main" />
@@ -129,8 +147,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.OthelloModelTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.OthelloModelTest.makeMove" />
       </list>
     </recent_temporary>
@@ -147,5 +165,8 @@
       <updated>1581538506677</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
