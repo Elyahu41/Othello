@@ -1,5 +1,5 @@
 package Othello;
-// Elyahu Jacobi
+//Elyahu Jacobi
 
 import org.junit.Test;
 
