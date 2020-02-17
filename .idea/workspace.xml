@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33d63e2c-b748-4fcf-819a-f55d1628b3f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Test/Othello/OthelloModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Othello/OthelloModelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Othello/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Othello/OthelloModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/OthelloModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Othello/OthelloModelInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/OthelloModelInterface.java" afterDir="false" />
-    </list>
+    <list default="true" id="33d63e2c-b748-4fcf-819a-f55d1628b3f4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581963654600</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Any">
+      <created>1581964431862</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581964431862</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
