@@ -1,5 +1,5 @@
 package Othello;
-//Elyahu Jacobi
+// Elyahu Jacobi
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
