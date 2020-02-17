@@ -75,7 +75,7 @@ public class OthelloWindow extends JFrame {
         }
 
         private void update() {
-            Component[] components = getComponents(); //problem here
+            Component[] components = getComponents(); //TODO update update method
             for (int i = 0; i < GRID_SIZE; i++) {
                 for (int j = 0; j < GRID_SIZE; j++) {
                     JButton b = (JButton) components[i + (j * GRID_SIZE)];

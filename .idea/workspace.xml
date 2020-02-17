@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33d63e2c-b748-4fcf-819a-f55d1628b3f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Othello/OthelloModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Othello/OthelloWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Othello/Othello/OthelloModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Othello/OthelloModelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Othello/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Othello/OthelloModelInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/OthelloModelInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Othello/OthelloWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Othello/OthelloWindow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,9 +159,47 @@
       <option name="presentableId" value="Default" />
       <updated>1581538506677</updated>
     </task>
+    <task id="LOCAL-00001" summary="Again">
+      <created>1581965466984</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581965466984</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Again">
+      <created>1581965504811</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581965504811</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Again">
+      <created>1581965545045</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581965545045</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Again">
+      <created>1581965593480</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581965593480</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Again">
+      <created>1581965644242</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581965644242</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Again" />
   </component>
 </project>
