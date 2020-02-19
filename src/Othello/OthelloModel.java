@@ -1,18 +1,17 @@
 package Othello;
 //Elyahu Jacobi
+import java.util.Arrays;
 
 enum CellState {NONE, BLACK, WHITE}
 
 public class OthelloModel implements OthelloModelInterface {
     private static CellState[][] grid;
-    private final int GRID_SIZE = 8;
+    private static final int GRID_SIZE = 8;
 
-    public OthelloModel() {
+    OthelloModel() {
         grid = new CellState[GRID_SIZE][GRID_SIZE];
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                grid[i][j] = CellState.NONE;
-            }
+        for (CellState[] cellStates : grid) {
+            Arrays.fill(cellStates, CellState.NONE);
         }
         grid[(GRID_SIZE / 2) - 1][(GRID_SIZE / 2) - 1] = CellState.WHITE;
         grid[GRID_SIZE / 2][GRID_SIZE / 2] = CellState.WHITE;
@@ -47,7 +46,7 @@ public class OthelloModel implements OthelloModelInterface {
         if (checkedRow == 8 || checkedRow < 0 || checkedCol == 8 || checkedCol < 0) {
             return;
         }
-        while (grid[checkedRow][checkedCol] == CellState.BLACK || grid[checkedRow][checkedCol] == CellState.WHITE) {
+        while (grid[checkedRow][checkedCol] != CellState.NONE) {
             if (grid[checkedRow][checkedCol] == state) {
                 while (!(row == checkedRow && col == checkedCol)) {
                     grid[checkedRow][checkedCol] = state;
@@ -80,11 +79,11 @@ public class OthelloModel implements OthelloModelInterface {
     private void endGame() {
         int countWhite = 0;
         int countBlack = 0;
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                if (grid[i][j] == CellState.BLACK) {
+        for (CellState[] cellStates : grid) {
+            for (CellState cellState : cellStates) {
+                if (cellState == CellState.BLACK) {
                     countBlack++;
-                } else if (grid[i][j] == CellState.WHITE) {
+                } else if (cellState == CellState.WHITE) {
                     countWhite++;
                 }
             }

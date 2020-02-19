@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class OthelloWindow extends JFrame {
     private int GRID_SIZE = 8;
     private AtomicBoolean isBlackTurn = new AtomicBoolean(true);
+    private JButton[][] buttons = new JButton[GRID_SIZE][GRID_SIZE];
 
     public OthelloWindow(OthelloModelInterface othelloModelInterface) {
         setTitle("Othello");
@@ -18,6 +19,7 @@ public class OthelloWindow extends JFrame {
         for (int row = 0; row < GRID_SIZE; row++) { //Setup Grid
             for (int col = 0; col < GRID_SIZE; col++) {
                 JButton b = new JButton();
+                buttons[row][col] = b;
                 add(b);
                 b.setName("" + row + col);
                 b.addActionListener(new ButtonPressedListener(b, othelloModelInterface));
@@ -75,10 +77,9 @@ public class OthelloWindow extends JFrame {
         }
 
         private void update() {
-            Component[] components = getComponents(); //TODO update update method
             for (int i = 0; i < GRID_SIZE; i++) {
                 for (int j = 0; j < GRID_SIZE; j++) {
-                    JButton b = (JButton) components[i + (j * GRID_SIZE)];
+                    JButton b = buttons[i][j];
                     CellState cellState = model.getCellState(i, j);
 
                     if (cellState == CellState.WHITE) {
