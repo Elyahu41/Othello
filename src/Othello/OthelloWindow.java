@@ -61,7 +61,7 @@ public class OthelloWindow extends JFrame {
                 model.makeMove(clickedRow, clickedCol, CellState.BLACK);
                 update();
                 togglePlayer();
-            } else if (model.isMoveLegal(clickedRow, clickedCol, CellState.WHITE)) {
+            } else if (!isBlackTurn.get() && model.isMoveLegal(clickedRow, clickedCol, CellState.WHITE)) {
                 model.makeMove(clickedRow, clickedCol, CellState.WHITE);
                 update();
                 togglePlayer();

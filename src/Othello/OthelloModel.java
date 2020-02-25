@@ -96,6 +96,43 @@ public class OthelloModel implements OthelloModelInterface {
             System.out.println("Game over. It is a tie game.");
         }
     }
+    private boolean checkAllFlippedDir(int row, int col, CellState state) {
+        return checkFlippedPieces(row, col, state, 0, 1) ||//check up
+                checkFlippedPieces(row, col, state, 0, -1) ||//check down
+                checkFlippedPieces(row, col, state, 1, 0) || //check left
+                checkFlippedPieces(row, col, state, -1, 0) ||//check right
+                checkFlippedPieces(row, col, state, 1, 1) &&//check corners
+                checkFlippedPieces(row, col, state, 1, -1) &&
+                checkFlippedPieces(row, col, state, -1, 1) &&
+                checkFlippedPieces(row, col, state, -1, -1);
+    }
+
+    private boolean checkFlippedPieces(int row, int col, CellState state, int rowDir, int colDir) {
+        int checkedRow = row + rowDir;
+        int checkedCol = col + colDir;
+        boolean isGood = false;
+        if (checkedRow == 8 || checkedRow < 0 || checkedCol == 8 || checkedCol < 0) {
+            return isGood;
+        }
+        while (grid[checkedRow][checkedCol] != CellState.NONE) {
+            if (grid[checkedRow][checkedCol] == state) {
+                while (!(row == checkedRow && col == checkedCol)) {
+//                    grid[checkedRow][checkedCol] = state;
+                    checkedRow = checkedRow - rowDir;
+                    checkedCol = checkedCol - colDir;
+                     isGood = true;
+                }
+                break;
+            } else {
+                checkedRow = checkedRow + rowDir;
+                checkedCol = checkedCol + colDir;
+            }
+            if (checkedRow < 0 || checkedCol == 8 || checkedRow == 8 || checkedCol < 0) {
+                break;
+            }
+        }
+        return isGood;
+    }
 
     @Override
     public boolean makeMove(int row, int col, CellState state) {
@@ -106,7 +143,7 @@ public class OthelloModel implements OthelloModelInterface {
 
     @Override
     public boolean isMoveLegal(int row, int col, CellState state) {
-        return isLocationAvailable(row, col) && isMoveFlippable(row, col, state);
+        return isLocationAvailable(row, col) && isMoveFlippable(row, col, state) && checkAllFlippedDir(row, col, state);
     }
 
     @Override
