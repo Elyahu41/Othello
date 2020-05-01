@@ -2,10 +2,10 @@
 A simple Othello game with GUI and console outputs
 
 How to use:
-In the main class uncomment which version of Othello you want to play.
+Run the program and enter 1,2, or 3 for which version of Othello you want to play.
 
-new OthelloGui will create an othello game with GUI.
-new OthelloModelOnePlayer will create a computer vs player othello game in the console.
-new OthelloConsole will create a 2 player othello game with inputs.
+The OthelloGui class will create an othello game with GUI.
+The OthelloModelOnePlayer class will create a computer vs player othello game in the console.
+The OthelloConsole class will create a 2 player othello game with inputs.
 
 Enjoy!
