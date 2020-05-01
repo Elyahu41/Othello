@@ -102,6 +102,11 @@ public class OthelloModelOnePlayer implements OthelloModelInterface{
     }
 
     @Override
+    public CellState endGame() {
+        return othelloModel.endGame();
+    }
+
+    @Override
     public boolean makeMove(int row, int col, CellState state) {
         return othelloModel.makeMove(row, col, state);
     }

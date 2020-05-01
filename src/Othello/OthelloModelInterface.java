@@ -2,6 +2,7 @@ package Othello;
 //Elyahu Jacobi
 public interface OthelloModelInterface {
     boolean checkGameOver();
+    CellState endGame();
     boolean makeMove(int row, int col, CellState state);
     boolean isMoveLegal(int row, int col, CellState state);
     boolean isMoveFlippable(int row, int col, CellState state);

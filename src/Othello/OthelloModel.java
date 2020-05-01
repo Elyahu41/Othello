@@ -24,42 +24,29 @@ public class OthelloModel implements OthelloModelInterface {
         if (gameOver()) {
             endGame();
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    private void flipAllDir(int row, int col, CellState state) {
-        flipPieces(row, col, state, 0, 1);//check up
-        flipPieces(row, col, state, 0, -1);//check down
-        flipPieces(row, col, state, 1, 0); //check left
-        flipPieces(row, col, state, -1, 0);//check right
-        flipPieces(row, col, state, 1, 1);//check corners
-        flipPieces(row, col, state, 1, -1);
-        flipPieces(row, col, state, -1, 1);
-        flipPieces(row, col, state, -1, -1);
+    private void flipInAllDir(int row, int col, CellState state) {
+        grid[row][col] = state;
+        for (int i = 0; i < GRID_SIZE; i++) {
+            flipPieces(row, col, state, i);
+        }
     }
 
-    private void flipPieces(int row, int col, CellState state, int rowDir, int colDir) {
-        int checkedRow = row + rowDir;
-        int checkedCol = col + colDir;
-        if (checkedRow == 8 || checkedRow < 0 || checkedCol == 8 || checkedCol < 0) {
-            return;
-        }
-        while (grid[checkedRow][checkedCol] != CellState.NONE) {
-            if (grid[checkedRow][checkedCol] == state) {
-                while (!(row == checkedRow && col == checkedCol)) {
-                    grid[checkedRow][checkedCol] = state;
-                    checkedRow = checkedRow - rowDir;
-                    checkedCol = checkedCol - colDir;
-                }
-                break;
-            } else {
-                checkedRow = checkedRow + rowDir;
-                checkedCol = checkedCol + colDir;
-            }
-            if (checkedRow < 0 || checkedCol == 8 || checkedRow == 8 || checkedCol < 0) {
-                break;
+    private void flipPieces(int row, int col, CellState state, int dir) {
+        int[] dirI = {-1,1,0,0,1,-1,1,-1};// these are all the directions to check
+        int[] dirJ = {0,0,1,-1,1,-1,-1,1};
+        if(isFlippable(state, row, col, dir)) {
+            row+=dirI[dir];
+            col+=dirJ[dir];
+
+            while(grid[row][col] != state) {
+                grid[row][col] = state;
+                row += dirI[dir];
+                col += dirJ[dir];
             }
         }
     }
@@ -76,7 +63,7 @@ public class OthelloModel implements OthelloModelInterface {
         return (countTotal == GRID_SIZE * GRID_SIZE);
     }
 
-    private void endGame() {
+    public CellState endGame() {
         int countWhite = 0;
         int countBlack = 0;
         for (CellState[] cellStates : grid) {
@@ -90,87 +77,64 @@ public class OthelloModel implements OthelloModelInterface {
         }
         if (countBlack > countWhite) {
             System.out.println("Game over! The winner is black!");
+            return CellState.BLACK;
         } else if (countWhite > countBlack) {
             System.out.println("Game over! The winner is white!");
+            return CellState.WHITE;
         } else {
             System.out.println("Game over. It is a tie game.");
         }
-    }
-    private boolean checkAllFlippedDir(int row, int col, CellState state) {
-        return checkFlippedPieces(row, col, state, 0, 1) ||//check up
-                checkFlippedPieces(row, col, state, 0, -1) ||//check down
-                checkFlippedPieces(row, col, state, 1, 0) || //check left
-                checkFlippedPieces(row, col, state, -1, 0) ||//check right
-                checkFlippedPieces(row, col, state, 1, 1) &&//check corners
-                checkFlippedPieces(row, col, state, 1, -1) &&
-                checkFlippedPieces(row, col, state, -1, 1) &&
-                checkFlippedPieces(row, col, state, -1, -1);
+        return null;
     }
 
-    private boolean checkFlippedPieces(int row, int col, CellState state, int rowDir, int colDir) {
-        int checkedRow = row + rowDir;
-        int checkedCol = col + colDir;
-        boolean isGood = false;
-        if (checkedRow == 8 || checkedRow < 0 || checkedCol == 8 || checkedCol < 0) {
-            return isGood;
+    private boolean isFlippable(CellState state, int row, int col, int dir) {
+        int[] dirI = {-1,1,0,0,1,-1,1,-1};
+        int[] dirJ = {0,0,1,-1,1,-1,-1,1};
+        CellState opponent = CellState.BLACK;
+        if (state == CellState.BLACK){
+            opponent = CellState.WHITE;
         }
-        while (grid[checkedRow][checkedCol] != CellState.NONE) {
-            if (grid[checkedRow][checkedCol] == state) {
-                while (!(row == checkedRow && col == checkedCol)) {
-//                    grid[checkedRow][checkedCol] = state;
-                    checkedRow = checkedRow - rowDir;
-                    checkedCol = checkedCol - colDir;
-                     isGood = true;
-                }
-                break;
-            } else {
-                checkedRow = checkedRow + rowDir;
-                checkedCol = checkedCol + colDir;
+        boolean isFlippable = false;
+        for(int i = 0; i < 7; i++) {
+            row += dirI[dir];
+            col += dirJ[dir];
+            if (row < 0 || row > GRID_SIZE - 1) {
+                continue;
             }
-            if (checkedRow < 0 || checkedCol == 8 || checkedRow == 8 || checkedCol < 0) {
-                break;
+            if (col < 0 || col > GRID_SIZE - 1) {
+                continue;
+            }
+            if (grid[row][col] == opponent) {
+                isFlippable = true;
+            } else if (grid[row][col] == state) {
+                return isFlippable;
+            } else{
+                return false;
             }
         }
-        return isGood;
+        return false;
     }
 
     @Override
     public boolean makeMove(int row, int col, CellState state) {
         grid[row][col] = state;
-        flipAllDir(row, col, state);
+        flipInAllDir(row, col, state);
         return true;
     }
 
     @Override
     public boolean isMoveLegal(int row, int col, CellState state) {
-        return isLocationAvailable(row, col) && isMoveFlippable(row, col, state) && checkAllFlippedDir(row, col, state);
+        return isLocationAvailable(row, col) && isMoveFlippable(row, col, state);
     }
 
     @Override
     public boolean isMoveFlippable(int row, int col, CellState state) {
-        boolean result = false;
-        CellState oppCol = CellState.BLACK;
-        if (state == CellState.BLACK) {
-            oppCol = CellState.WHITE;
-        }
-        if (row + 1 < 8 && col + 1 < 8 && grid[row + 1][col + 1] == oppCol) {
-            result = true;
-        } else if (row + 1 < 8 && grid[row + 1][col] == oppCol) {
-            result = true;
-        } else if (col + 1 < 8 && grid[row][col + 1] == oppCol) {
-            result = true;
-        } else if (col - 1 > -1 && grid[row][col - 1] == oppCol) {
-            result = true;
-        } else if (row - 1 > -1 && col - 1 > -1 && grid[row - 1][col - 1] == oppCol) {
-            result = true;
-        } else if (row - 1 > -1 && grid[row - 1][col] == oppCol) {
-            result = true;
-        } else if (row - 1 > -1 && col + 1 < 8 && grid[row - 1][col + 1] == oppCol) {
-            result = true;
-        } else if (row + 1 < 8 && col - 1 > -1 && grid[row + 1][col - 1] == oppCol) {
-            result = true;
-        }
-        return result;
+            for(int dir = 0; dir < 8; dir++) {
+                if (isFlippable(state, row, col, dir)) {
+                    return true;
+                }
+            }
+        return false;
     }
 
     @Override
